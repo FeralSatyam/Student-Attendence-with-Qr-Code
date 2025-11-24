@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <div class="w-full h-screen bg-zinc-900 flex flex-col">
-        <div>
-            <nav class="w-full flex justify-center py-5">
-                <ul class="width-200 text-white flex gap-5">
-                    <li class="float-left"><a href="/" class="text-center">Home</a></li>
-                    <li class="float-left"><a href="" class="text-center">About Us</a></li>
-                    <li class="float-left"><a href="" class="text-center">Login as Teacher</a></li>
-                    <li class="float-left"><a href="/studentlogin" class="text-center">Login as Student</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="mt-20 ml-20">
-            <h1 class="text-3xl text-white">Welcome, <%= student.name%></h1>
-        </div>
+<body class="bg-zinc-900 text-white font-sans">
+  <!-- Navbar -->
+  <nav class="w-full bg-zinc-800 shadow-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h2 class="text-xl font-bold tracking-wide text-indigo-400">Attendance System</h2>
+      <ul class="flex gap-6 text-sm font-medium">
+        <li><a href="/" class="hover:text-indigo-400 transition">Home</a></li>
+        <li><a href="#" class="hover:text-indigo-400 transition">About Us</a></li>
+        <li><a href="/teacherlogin" class="hover:text-indigo-400 transition">Login as Teacher</a></li>
+        <li><a href="/studentlogin" class="hover:text-indigo-400 transition">Login as Student</a></li>
+      </ul>
     </div>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section class="flex flex-col items-center justify-center h-[calc(100vh-80px)] px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+      Welcome, <span class="text-indigo-400"><%= student.name %></span>
+    </h1>
+    <p class="text-lg text-gray-300 max-w-xl">
+      You are now logged in to the Student Dashboard. Explore your attendance records and upcoming classes.
+    </p>
+
+    <!-- Example CTA buttons (optional for navigation) -->
+    <div class="flex gap-4 mt-8">
+      <a href="/attendance" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-md transition">
+        View Attendance
+      </a>
+      <a href="/logout" class="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg shadow-md transition">
+        Logout
+      </a>
+    </div>
+  </section>
 </body>
 </html>

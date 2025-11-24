@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Registration</title>
+  <title>Teacher Login</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-zinc-900 text-white font-sans">
@@ -20,57 +20,31 @@
     </div>
   </nav>
 
-  <!-- Registration Section -->
+  <!-- Login Section -->
   <section class="flex flex-col items-center justify-center h-[calc(100vh-80px)] px-6">
-    <h1 class="text-3xl md:text-4xl font-extrabold mb-8">Register as <span class="text-indigo-400">Student</span></h1>
+    <h1 class="text-3xl md:text-4xl font-extrabold mb-8">Login as <span class="text-indigo-400">Teacher</span></h1>
     
-    <form class="bg-zinc-800 shadow-lg rounded-lg p-8 w-full max-w-md flex flex-col gap-5" action="/studentregister" method="post">
-      <!-- Name -->
-      <input 
-        class="border border-gray-600 bg-zinc-900 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" 
-        name="name" type="text" placeholder="Name" required>
-
-      <!-- Course -->
-      <label class="text-sm font-medium">Course:</label>
-      <select 
-        class="border border-gray-600 bg-zinc-900 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" 
-        name="course" required>
-        <option value="cs with ai">Computer Science with AI</option>
-        <option value="cs with ds">Computer Science with Data Science</option>
-      </select>
-
-      <!-- Intake -->
-      <label class="text-sm font-medium">Intake:</label>
-      <select 
-        class="border border-gray-600 bg-zinc-900 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" 
-        name="intake" required>
-        <option value="november">November</option>
-        <option value="january">January</option>
-      </select>
-
-      <!-- Email -->
+    <form class="bg-zinc-800 shadow-lg rounded-lg p-8 w-full max-w-md flex flex-col gap-5" action="/teacherlogin" method="post">
       <input 
         class="border border-gray-600 bg-zinc-900 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" 
         name="email" type="email" placeholder="Email" required>
-
-      <!-- Password -->
+      
       <input 
         class="border border-gray-600 bg-zinc-900 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" 
         name="password" type="password" placeholder="Password" required>
-
-      <!-- Submit -->
+      
       <input 
         class="bg-indigo-600 hover:bg-indigo-700 rounded-lg py-2 font-semibold cursor-pointer transition" 
-        type="submit" value="Sign Up">
+        type="submit" value="Login">
     </form>
 
-    <!-- Already have account -->
+    <!-- Sign Up -->
     <div class="flex items-center gap-3 mt-6 text-gray-300">
-      <p>Already have an account?</p>
-      <form action="/studentlogin" method="get">
+      <p>No Account?</p>
+      <form action="/teacherregister" method="get">
         <input 
           class="px-5 py-2 rounded-lg bg-yellow-600 hover:bg-yellow-700 text-black font-semibold cursor-pointer transition" 
-          type="submit" value="Login">
+          type="submit" value="Sign Up">
       </form>
     </div>
   </section>
