@@ -4,6 +4,7 @@ const teacherModel = require("./models/teacher")
 const bcrypt = require('bcrypt')
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
+const qrcode = require('qrcode')
 app = express()
 
 app.set("view engine", "ejs")
@@ -54,7 +55,12 @@ app.get('/teacherprofile', isLoggedInTeacher, async (req, res)=>{
     let teacher = await studentModel.findOne({email: req.teacher.email})
     res.render("teacherprofile", {teacher})
 })  
-
+app.get('/teacherattendance', (req,res)=>{
+    res.render("teacherattendence")
+})
+app.get('/aboutus', (req,res)=>{
+    res.render("aboutus")
+})
 
 app.post('/studentlogin', async (req, res)=>{
     let {email, password} = req.body
@@ -92,7 +98,7 @@ app.post('/teacherlogin', async (req, res)=>{
 })
 
 app.post('/studentregister', async (req,res)=>{
-    let {name, email, password} = req.body
+    let {name, course, intake, email, password} = req.body
     let student = await studentModel.findOne({email})
     if(student) res.status(500).send("User Already Created")
     
