@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900 flex flex-col">
+        <div>
+            <nav class="w-full flex justify-center py-5">
+                <ul class="width-200 text-white flex gap-5">
+                    <li class="float-left"><a href="/" class="text-center">Home</a></li>
+                    <li class="float-left"><a href="" class="text-center">About Us</a></li>
+                    <li class="float-left"><a href="" class="text-center">Login as Teacher</a></li>
+                    <li class="float-left"><a href="/studentlogin" class="text-center">Login as Student</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="flex justify-center mt-10">
+            <h1 class="text-3xl text-white">Login as Student</h1>
+        </div>
+        <div class="text-white flex justify-center mt-15">
+            <form class="flex flex-col gap-4" action="/studentlogin" method="post">
+                <input class="border border-1 border-white w-100 rounded px-2 py-1" name="email" type="email" placeholder="Email">
+                <input class="border border-1 border-white w-100 rounded px-2 py-1" name="password" type="password" placeholder="Password">
+                <input class="bg-blue-900 rounded h-10" type="submit" value="Login">
+            </form>
+        </div>
+        <div class="text-white flex justify-center mr-75 mt-5 gap-3">
+            <p>No Account?</p>
+            <form action="/studentregister" method="">
+                <input class=" w-30 px-5 py-2 rounded bg-yellow-700" type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
