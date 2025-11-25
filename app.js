@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt')
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
 const qrcode = require('qrcode')
+const sessionRoutes = require('./routes/session')
 app = express()
 
 app.set("view engine", "ejs")
@@ -32,6 +33,8 @@ function isLoggedInTeacher(req, res, next){
 app.get('/', (req, res)=>{
     res.render("index")
 })
+app.use('/session', sessionRoutes)
+
 app.get('/studentlogin', (req, res)=>{
     res.render("studentlogin")
 })
